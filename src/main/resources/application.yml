@@ -1,0 +1,18 @@
+eureka:
+    instance:
+        # This tells Eureka on what host it’s running on
+        hostname: localhost 
+    client:
+        #Eureka won’t try to reach out to other Eureka servers
+        fetch-registry: false 
+        register-with-eureka: false
+        # Map of zone names to one or more URLs of Eureka servers in that zone
+        service-url:
+            # Mapped to the default zone (Eureka server itself)
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    # preventing the deregistration of active services
+    #server.enable-self-preservation: false
+
+server:
+    # Default port that the Eureka client listens on.
+    port: 8761
