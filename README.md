@@ -1,0 +1,2 @@
+# taco-cloud-rest
+Learning to build spring boot projects from Spring In Action 6 book. This is second part of book where we start using REST API instead of Web API. Also project architecture has changed to multimodule.
