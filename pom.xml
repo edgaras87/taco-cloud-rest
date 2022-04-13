@@ -16,4 +16,7 @@
 		<tacocloud.version>${project.version}</tacocloud.version>
 	</properties>
 
+	<modules>
+		<module>tacocloud</module>
+	</modules>
 </project>
