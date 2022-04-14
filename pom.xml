@@ -18,5 +18,7 @@
 
 	<modules>
 		<module>tacocloud</module>
+		<module>tacocloud-examples</module>
 	</modules>
+	
 </project>
