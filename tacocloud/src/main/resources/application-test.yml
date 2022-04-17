@@ -1,0 +1,7 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
