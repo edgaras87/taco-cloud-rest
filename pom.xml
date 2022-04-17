@@ -20,6 +20,7 @@
 		<module>tacocloud</module>
 		<module>tacocloud-examples</module>
 		<module>tacocloud-domain</module>
+		<module>tacocloud-data</module>
 	</modules>
 	 
 </project>

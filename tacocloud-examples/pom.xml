@@ -22,6 +22,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>edge</groupId>
+			<artifactId>tacocloud-data</artifactId>
+			<version>${tacocloud.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
