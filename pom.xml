@@ -19,6 +19,7 @@
 	<modules>
 		<module>tacocloud</module>
 		<module>tacocloud-examples</module>
+		<module>tacocloud-domain</module>
 	</modules>
-	
+	 
 </project>

@@ -16,6 +16,13 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>edge</groupId>
+			<artifactId>tacocloud-examples</artifactId>
+			<version>${tacocloud.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

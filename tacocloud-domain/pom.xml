@@ -5,9 +5,9 @@
 		<artifactId>taco-cloud-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>tacocloud-examples</artifactId>
-	<name>tacocloud-examples</name>
-	<description>Taco Cloud Examples</description>
+	<artifactId>tacocloud-domain</artifactId>
+	<name>tacocloud-domain</name>
+	<description>Taco Cloud Domain</description>
 
 	<properties>
 		<java.version>16</java.version>
@@ -15,28 +15,15 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>edge</groupId>
-			<artifactId>tacocloud-domain</artifactId>
-			<version>${tacocloud.version}</version>
-		</dependency>
-
+		<!-- Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 
 	</dependencies>
+
 
 </project>
