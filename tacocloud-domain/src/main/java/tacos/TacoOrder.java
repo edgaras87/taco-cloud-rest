@@ -48,8 +48,7 @@ public class TacoOrder implements Serializable {
 
 	private String ccCVV;
 
-	// FetchType.EAGER - to bypass no session error
-	@ManyToMany(targetEntity=Taco.class, fetch = FetchType.EAGER)
+	@ManyToMany(targetEntity=Taco.class)
 	private List<Taco> tacos = new ArrayList<>();
 
 	public void addTaco(Taco design) {
