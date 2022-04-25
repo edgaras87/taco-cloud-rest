@@ -6,11 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +31,9 @@ public class TacoOrder implements Serializable {
 	private Long id;
 
 	private Date placedAt;
+	
+	@ManyToOne
+	private User user;
 
 	private String deliveryName;
 

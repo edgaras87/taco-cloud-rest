@@ -11,17 +11,15 @@ import java.util.Random;
 import java.util.Set;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import lombok.extern.slf4j.Slf4j;
 import tacos.Ingredient;
 import tacos.Ingredient.Type;
 import tacos.Taco;
 import tacos.TacoOrder;
+import tacos.User;
+import tacos.data.UserRepository;
 
 @Service
 public class DomainExamples {
@@ -88,7 +86,9 @@ public class DomainExamples {
 	}
 
 	@Bean
-	private List<TacoOrder> initializeTacoOrder(List<Taco> tacos) {
+	private List<TacoOrder> initializeTacoOrder(List<Taco> tacos, 
+												UserRepository userRepo,
+												PasswordEncoder encoder) {
 		
 		List<TacoOrder> orders = new ArrayList<>();
 		List<Taco> tacoList;
@@ -96,14 +96,20 @@ public class DomainExamples {
 		if (print)
 			System.out.println("=== Domain Order Start ===");
 		
+		
+		User user = new User("tacoOrder", encoder.encode("pass"), "Tom Anderson",
+							 "Wall street 12", "Edinburg", "", "","");
+		userRepo.save(user);
+		user = userRepo.findByUsername("tacoOrder");
+		
 		tacoList = Arrays.asList(tacos.get(0), tacos.get(1), tacos.get(2), tacos.get(3));
-		TacoOrder order1 = new TacoOrder(Long.valueOf(12), new Date(), "Jon Jonson", "Barton road 143", "London", "UK",
+		TacoOrder order1 = new TacoOrder(Long.valueOf(12), new Date(), user, "Jon Jonson", "Barton road 143", "London", "UK",
 				"PE124TF", "0123999988882323", "10/23", "333", tacoList);
 		tacoList = Arrays.asList(tacos.get(4), tacos.get(5), tacos.get(6));
-		TacoOrder order2 = new TacoOrder(Long.valueOf(2), new Date(), "Peter Smith", "Royal road 12", "London", "UK",
+		TacoOrder order2 = new TacoOrder(Long.valueOf(2), new Date(), user, "Peter Smith", "Royal road 12", "London", "UK",
 				"PE157AF", "0123999965454432", "09/25", "553", tacoList);
 		tacoList = Arrays.asList(tacos.get(7), tacos.get(8));
-		TacoOrder order3 = new TacoOrder(Long.valueOf(32), new Date(), "Ben Anderson", "Dawes street road 143",
+		TacoOrder order3 = new TacoOrder(Long.valueOf(32), new Date(), user, "Ben Anderson", "Dawes street road 143",
 				"London", "UK", "PE175TG", "0123999977653342", "06/24", "999", tacoList);
 		
 		List<TacoOrder> orderList = Arrays.asList(order1, order2, order3);
